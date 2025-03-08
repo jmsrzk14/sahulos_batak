@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Heart, ShoppingBag } from "lucide-react";
 import { Product, productsData } from "./Products";
+import { useCart } from '../context/CartContext';
 
 const FeaturedProducts = () => {
   const [products, setProducts] = useState<Product[]>(productsData);
-  const [visibleCount, setVisibleCount] = useState(5);
+  const [visibleCount, setVisibleCount] = useState(9);
   const latestProducts = products.slice(0, visibleCount);
+  const { addToCart } = useCart();
 
   const toggleFavorite = (id: number) => {
     setProducts((prevProducts) =>
@@ -75,7 +77,10 @@ const FeaturedProducts = () => {
                 <div className="flex justify-between items-center">
                   <span className="text-lg font-bold text-amber-800">{formatPrice(product.price)}</span>
                   {product.stock > 0 && (
-                    <button className="flex items-center gap-2 bg-amber-800 hover:bg-amber-900 text-white px-4 py-2 rounded-md transition-colors">
+                    <button 
+                      onClick={() => addToCart(product)}
+                      className="flex items-center gap-2 bg-amber-800 hover:bg-amber-900 text-white px-4 py-2 rounded-md transition-colors"
+                    >
                       <ShoppingBag size={18} />
                       <span>Beli</span>
                     </button>
@@ -90,7 +95,7 @@ const FeaturedProducts = () => {
           <div className="text-center mt-12">
             <button
               className="bg-transparent border-2 border-amber-800 text-amber-800 hover:bg-amber-800 hover:text-white px-8 py-3 rounded-md font-medium transition-colors"
-              onClick={() => setVisibleCount((prev) => prev + 5)}
+              onClick={() => setVisibleCount((prev) => prev + 6)}
             >
               Tampilkan Lebih Banyak
             </button>

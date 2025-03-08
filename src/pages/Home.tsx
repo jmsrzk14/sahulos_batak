@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Home = () => {
   useEffect(() => {
-    document.title = "WASTRA | Lestarikan Budaya Batak";
+    document.title = "Sahulos | Lestarikan Budaya Batak";
   }, []);
   const [products, setProducts] = useState<Product[]>(productsData);
 
@@ -31,7 +31,7 @@ const Home = () => {
   };
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 700,
     slidesToShow: 4,
@@ -56,15 +56,15 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className="relative z-10">
       <Hero />
-      <div className="bg-black py-10">
-        <div className="max-w-7xl mx-auto p-4">
+      <div className="relative bg-black py-10 inset-0 z-20">
+        <div className="max-w-7xl mx-auto p-4 bg-black">
           <h1 className="text-3xl font-bold text-white text-center mb-4">
-            Selamat datang di WASTRA - Wear As Tradition Indonesia
+            Selamat datang di SAHULOS - Sahundulan Ulos
           </h1>
           <p className="text-white text-center mb-4">
-            WASTRA - Wear As Tradition Indonesia adalah sebuah platform yang menyediakan jual beli busana adat batak
+            SAHULOS - Wear As Tradition Indonesia adalah sebuah platform yang menyediakan jual beli busana adat batak
           </p>
           <Slider {...settings} className="mt-6">
             {products.map((product) => (
@@ -89,10 +89,10 @@ const Home = () => {
                   </div>
                   <div className="p-5">
                     <div className="flex flex-row">
-                      <h3 className="text-xl font-semibold text-amber-900 mb-1">{product.name}</h3>
+                    <h3 className="text-xl font-semibold text-amber-900 mb-1 truncate">{product.name}</h3>
                       <button
                         onClick={() => toggleFavorite(product.id)}
-                        className="absolute top-[21em] lg:left-[14.5em] sm:left-[31em] md:left-[18em] xs:left-[17.4em] bg-white p-2 rounded-full shadow-md hover:bg-amber-50 transition-colors"
+                        className="absolute top-[17.3em] lg:left-[14.8em] sm:left-[31em] md:left-[18em] xs:left-[17.4em] bg-white p-2 rounded-full shadow-md hover:bg-amber-50 transition-colors"
                       >
                         <Heart
                           size={20}

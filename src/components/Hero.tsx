@@ -13,7 +13,7 @@ const Hero = () => {
           filter: "brightness(0.5)",
         }}
       ></div> */}
-      <div className="absolute inset-0">
+      <div className="fixed inset-0">
         <video 
           autoPlay 
           loop 

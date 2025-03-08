@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ShoppingBag, Search, User, Heart, Menu, X } from 'lucide-react';
+import { ShoppingBag, User, Heart, Menu, X } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const { cartItems, setIsCartOpen } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,13 +42,17 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className={`font-serif text-2xl font-bold tracking-wider ${isHomePage && !isScrolled ? 'text-white' : 'text-amber-900'}`}>
-              WASTRA
+              <img 
+                src="/logo.png" 
+                alt="Logo"
+                className="w-[170px] sm:w-50 md:w-20 lg:w-[10em] xs:ml-[-1.5em] xs:w-[10em] h-auto object-cover" 
+              />
             </Link>
           </div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className={`${linkClasses} ${isHomePage && !isScrolled ? 'text-white' : 'text-amber-900'}`}>Home</Link>
+            <Link to="/" className={`${linkClasses} ${isHomePage && !isScrolled ? 'text-white' : 'text-amber-900'}`}>Beranda</Link>
             <Link to="/products" className={`${linkClasses} ${isHomePage && !isScrolled ? 'text-white' : 'text-amber-900'}`}>Koleksi</Link>
             <Link to="/trade" className={`${linkClasses} ${isHomePage && !isScrolled ? 'text-white' : 'text-amber-900'}`}>Tukar Pakaian</Link>
             <Link to="/education" className={`${linkClasses} ${isHomePage && !isScrolled ? 'text-white' : 'text-amber-900'}`}>Edukasi</Link>
@@ -57,14 +63,16 @@ const Navbar = () => {
             <button className={iconClasses}>
               <User size={20} />
             </button>
-            <button className={iconClasses}>
-              <Heart size={20} />
-            </button>
-            <button className={`${iconClasses} relative`}>
+            <button 
+              className={`${iconClasses} relative`}
+              onClick={() => setIsCartOpen(true)}
+            >
               <ShoppingBag size={20} />
-              <span className="absolute -top-2 -right-2 bg-amber-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                0
-              </span>
+              {cartItems.length > 0 && (
+                <span className="absolute -top-2 -right-2 bg-amber-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  {cartItems.length}
+                </span>
+              )}
             </button>
           </div>
           
@@ -90,15 +98,23 @@ const Navbar = () => {
             <Link to="/education" className="text-amber-900 hover:text-amber-500 transition-colors py-2 border-b border-amber-100">Edukasi</Link>
             <Link to="/challenges" className="text-amber-900 hover:text-amber-500 transition-colors py-2 border-b border-amber-100">Tantangan</Link>
           </div>
-          <div className="flex justify-end pt-4">
-            <button className="text-amber-900 hover:text-amber-500 transition-colors mr-5">
+          <div className="flex justify-between pt-4">
+            <button className="text-amber-900 hover:text-amber-500 transition-colors">
               <User size={20} />
             </button>
-            <button className="text-amber-900 hover:text-amber-500 transition-colors relative">
+            <button className="text-amber-900 hover:text-amber-500 transition-colors">
+              <Heart size={20} />
+            </button>
+            <button 
+              className="text-amber-900 hover:text-amber-500 transition-colors relative"
+              onClick={() => setIsCartOpen(true)}
+            >
               <ShoppingBag size={20} />
-              <span className="absolute -top-2 -right-2 bg-amber-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                0
-              </span>
+              {cartItems.length > 0 && (
+                <span className="absolute -top-2 -right-2 bg-amber-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  {cartItems.length}
+                </span>
+              )}
             </button>
           </div>
         </div>

@@ -14,28 +14,84 @@ const TradeSection = () => {
   const [tradeItems, setTradeItems] = useState<TradeItem[]>([
     {
       id: 1,
-      name: "Batik Mega Mendung",
+      name: "Kebaya Ulos Siallagan",
       condition: "Sangat Baik",
-      owner: "Anisa W.",
-      image: "https://images.unsplash.com/photo-1528822855841-e8bf3134cdc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      description: "Batik Mega Mendung asli Cirebon, dipakai 2x untuk acara formal. Ukuran L, bahan katun premium."
+      owner: "Risna S.",
+      image: "https://i.pinimg.com/736x/92/1f/86/921f86dc5a5ddfb7700091de337b2bc8.jpg",
+      description: "Kebaya tradisional Batak menggunakan Ulos Siallagan, dipakai dalam acara adat. Bahan sutra halus."
     },
     {
       id: 2,
-      name: "Tenun Rangrang Bali",
+      name: "Setelan Jas Ulos Batak Sumba",
       condition: "Baik",
-      owner: "Putu S.",
-      image: "https://images.unsplash.com/photo-1596297063817-78e4c0a21b2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      description: "Kain tenun Bali motif Rangrang, sudah 1 tahun, masih dalam kondisi baik. Cocok untuk upacara adat."
+      owner: "Benny K.",
+      image: "https://i.pinimg.com/736x/b2/42/5d/b2425d704d6fd79fbed5817ab4d9a20a.jpg",
+      description: "Setelan jas pria berbahan Ulos Batak Sumba, sangat cocok untuk acara formal atau pernikahan adat."
     },
     {
       id: 3,
-      name: "Kebaya Encim Hijau",
+      name: "Dress Batik Ulos Si Gale-Gale",
       condition: "Seperti Baru",
-      owner: "Maya D.",
-      image: "https://images.unsplash.com/photo-1583846783214-7229a91b20ed?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      description: "Kebaya Encim warna hijau zamrud, baru dipakai sekali untuk wisuda. Ukuran M, bordir tangan."
-    }
+      owner: "Sari A.",
+      image: "https://i.pinimg.com/736x/15/9f/dc/159fdc31c4e42385f6009b964b2ca3d8.jpg",
+      description: "Dress batik wanita dengan aksen Ulos Si Gale-Gale, cocok untuk acara perayaan adat. Bahan tenun tradisional."
+    },
+    {
+      id: 4,
+      name: "Pakaian Pengantin Ulos Pandiangan",
+      condition: "Baik",
+      owner: "Johan H.",
+      image: "https://down-id.img.susercontent.com/file/9103ab6d449c1c567c658cb76a479697",
+      description: "Pakaian pengantin adat Batak dengan aksen Ulos Pandiangan. Bahan nyaman dan elegan untuk acara pernikahan."
+    },
+    {
+      id: 5,
+      name: "Blouse Ulos Batak Simarotun",
+      condition: "Sangat Baik",
+      owner: "Dian T.",
+      image: "https://images.tokopedia.net/img/cache/700/VqbcmM/2022/7/22/65621a36-29f0-448d-895e-b508f417fbf0.jpg",
+      description: "Blouse modern menggunakan Ulos Batak Simarotun, baru dipakai sekali dalam acara adat. Bahan katun premium."
+    },
+    {
+      id: 6,
+      name: "Baju Kurung Ulos Dolom Sihotang",
+      condition: "Baik",
+      owner: "Maya P.",
+      image: "https://down-id.img.susercontent.com/file/9ac793c06bb5773099bd370581b97d29",
+      description: "Baju kurung Batak dengan aksen Ulos Dolom Sihotang, sangat cocok untuk acara resmi dan adat."
+    },
+    {
+      id: 7,
+      name: "Outer Ulos Sinambela",
+      condition: "Seperti Baru",
+      owner: "Rosma P.",
+      image: "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/catalog-image/93/MTA-173342145/no-brand_no-brand_full01.jpg",
+      description: "Outer wanita berbahan Ulos Sinambela, baru dipakai sekali untuk acara adat. Motif dan desain unik."
+    },
+    {
+      id: 8,
+      name: "Setelan Wanita Ulos Batak Siallagan",
+      condition: "Baik",
+      owner: "Rudi D.",
+      image: "https://img.lazcdn.com/g/p/b12b72a1289e47fdbed4d8a280882e69.jpg_720x720q80.jpg_.webp",
+      description: "Setelan wanita dengan desain modern menggunakan Ulos Batak Siallagan, cocok untuk acara formal dan adat."
+    },
+    {
+      id: 9,
+      name: "Pakaian Tradisional Ulos Parompa",
+      condition: "Sangat Baik",
+      owner: "Miko S.",
+      image: "https://cnc-magazine.oramiland.com/parenting/images/toba.width-800.format-webp_ltkY0aO.webp",
+      description: "Pakaian tradisional Batak dengan aksen Ulos Parompa, baru dipakai sekali untuk acara adat."
+    },
+    {
+      id: 10,
+      name: "Setelan Jas Pengantin Ulos Toba",
+      condition: "Baik",
+      owner: "Sandi A.",
+      image: "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/catalog-image/115/MTA-158882848/no-brand_no-brand_full25.jpg",
+      description: "Setelan jas pengantin pria menggunakan Ulos Toba Batak, sangat cocok untuk acara pernikahan adat. Kondisi baik."
+    },
   ]);
 
   return (
@@ -109,9 +165,6 @@ const TradeSection = () => {
                       <h4 className="font-medium text-amber-900">{item.name}</h4>
                       <p className="text-sm text-neutral-500">Kondisi: {item.condition}</p>
                       <p className="text-sm text-neutral-500">Pemilik: {item.owner}</p>
-                      <button className="mt-2 text-amber-800 hover:text-amber-900 text-sm font-medium flex items-center gap-1">
-                        Lihat Detail <ArrowRight size={14} />
-                      </button>
                     </div>
                   </div>
                 ))}

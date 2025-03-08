@@ -1,30 +1,19 @@
 import React from 'react';
-import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-amber-900 text-amber-100">
+    <footer className="relative bg-amber-900 text-amber-100 z-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4">
-            <h3 className="font-serif text-2xl font-bold tracking-wider text-white">WASTRA</h3>
+            <h3 className="font-serif text-2xl font-bold tracking-wider text-white">SAHULOS</h3>
             <p className="text-amber-200">
-              Melestarikan keindahan pakaian adat Indonesia dengan sentuhan modern dan berkelanjutan.
+              Lestarikan warisan busana batak dan cintai busana warisan nenek moyang kita.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-amber-200 hover:text-white transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-amber-200 hover:text-white transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-amber-200 hover:text-white transition-colors">
-                <Twitter size={20} />
-              </a>
-            </div>
           </div>
           
-          <div>
+          <div className='ml-[9em]'>
             <h4 className="text-white font-medium mb-4">Tautan Cepat</h4>
             <ul className="space-y-2">
               <li><a href="#" className="hover:text-white transition-colors">Beranda</a></li>
@@ -34,8 +23,16 @@ const Footer = () => {
               <li><a href="#challenges" className="hover:text-white transition-colors">Tantangan</a></li>
             </ul>
           </div>
+
+          <div className="space-y-4">
+            <img 
+                src="/logo.png" 
+                alt="Logo"
+                className="w-[170px] sm:w-[20em] sm:hidden md:w-20 lg:inline-block lg:w-[30em] lg:mt-[-6em] lg:mb-[-10em] xs:hidden h-auto object-cover" 
+              />
+          </div>
           
-          <div>
+          {/* <div>
             <h4 className="text-white font-medium mb-4">Layanan</h4>
             <ul className="space-y-2">
               <li><a href="#" className="hover:text-white transition-colors">Cara Pembelian</a></li>
@@ -62,10 +59,10 @@ const Footer = () => {
                 <span>info@wastra.id</span>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
         <div className="border-t border-amber-800 mt-12 pt-8 flex flex-col md:flex-row justify-center items-center">
-          <p>&copy; 2025 WASTRA. Hak Cipta Dilindungi.</p>
+          <p>&copy; All Rights Reserved 2025 | SAHULOS</p>
         </div>
       </div>
     </footer>
