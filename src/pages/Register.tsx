@@ -10,11 +10,11 @@ export function Register() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-amber-50 xs:flex-col">
+    <div className="flex justify-center items-center min-h-screen bg-amber-50 xs:flex-col lg:flex-row">
         <img 
             src="/logo.png" 
             alt="Logo"
-            className="w-[20em] sm:w-30 md:w-30 lg:w-[26em] h-auto object-cover mb-[-2em] lg:ml-[-10em] lg:mr-[5em] xs:mb-[-7em]" 
+            className="w-[20em] sm:w-30 md:w-30 lg:w-[26em] h-auto object-cover mb-[-2em] lg:ml-[-10em] lg:mr-[5em] xs:mb-[-7em] lg:mb-0" 
         />
         <form className="bg-white p-6 rounded-lg shadow-lg w-80">
             <h2 className="text-3xl font-bold mb-4 flex justify-center">Register</h2>
