@@ -6,6 +6,8 @@ import Products from './pages/Products';
 import Trade from './pages/Trade';
 import Education from './pages/Education';
 import Challenges from './pages/Challenges';
+import { Login } from './pages/Login';
+import { Register } from './pages/Register';
 import Footer from './components/Footer';
 import CartNotification from './components/CartNotification';
 import { CartProvider } from './context/CartContext';
@@ -24,6 +26,8 @@ function App() {
               <Route path="/trade" element={<Trade />} />
               <Route path="/education" element={<Education />} />
               <Route path="/challenges" element={<Challenges />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
             </Routes>
           </main>
           <Footer />

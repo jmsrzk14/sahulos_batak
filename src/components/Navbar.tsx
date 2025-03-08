@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ShoppingBag, User, Heart, Menu, X } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
@@ -60,7 +61,7 @@ const Navbar = () => {
           </div>
           
           <div className="hidden md:flex items-center space-x-4">
-            <button className={iconClasses}>
+            <button className={iconClasses} onClick={() => navigate('/login')}>
               <User size={20} />
             </button>
             <button 
@@ -99,11 +100,10 @@ const Navbar = () => {
             <Link to="/challenges" className="text-amber-900 hover:text-amber-500 transition-colors py-2 border-b border-amber-100">Tantangan</Link>
           </div>
           <div className="flex justify-between pt-4">
-            <Link to="/products">
-              <button className="text-amber-900 hover:text-amber-500 transition-colors">
-                <User size={20} />
-              </button>
-            </Link>
+            <button className="text-amber-900 hover:text-amber-500 transition-colors"
+              onClick={() => navigate('/login')}>
+              <User size={20} />
+            </button>
             <button className="text-amber-900 hover:text-amber-500 transition-colors">
               <Heart size={20} />
             </button>
