@@ -13,7 +13,7 @@ const Footer = () => {
             </p>
           </div>
           
-          <div className='ml-[9em]'>
+          <div className='lg:ml-[9em] xs:ml-0'>
             <h4 className="text-white font-medium mb-4">Tautan Cepat</h4>
             <ul className="space-y-2">
               <li><a href="#" className="hover:text-white transition-colors">Beranda</a></li>

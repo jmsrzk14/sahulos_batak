@@ -6,12 +6,14 @@ import { Product, productsData } from "../components/Products";
 import { Heart, ShoppingBag } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useCart } from '../context/CartContext';
 
 const Home = () => {
   useEffect(() => {
     document.title = "Sahulos | Lestarikan Budaya Batak";
   }, []);
   const [products, setProducts] = useState<Product[]>(productsData);
+  const { addToCart } = useCart();
 
   const toggleFavorite = (id: number) => {
     setProducts((prevProducts) =>
@@ -103,10 +105,15 @@ const Home = () => {
                     <p className="text-neutral-600 mb-3">Stok: {product.stock}</p>
                     <div className="flex justify-between items-center">
                       <span className="text-lg font-bold text-amber-800">{formatPrice(product.price)}</span>
-                      <button className="flex items-center gap-2 bg-amber-800 hover:bg-amber-900 text-white px-4 py-2 rounded-md transition-colors">
-                        <ShoppingBag size={18} />
-                        <span>Beli</span>
-                      </button>
+                      {product.stock > 0 && (
+                        <button 
+                          onClick={() => addToCart(product)}
+                          className="flex items-center gap-2 bg-amber-800 hover:bg-amber-900 text-white px-4 py-2 rounded-md transition-colors"
+                        >
+                          <ShoppingBag size={18} />
+                          <span>Beli</span>
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>

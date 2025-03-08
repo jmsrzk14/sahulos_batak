@@ -11,11 +11,11 @@ export function Login() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-amber-50">
+    <div className="flex justify-center items-center min-h-screen bg-amber-50 xs:flex-col">
       <img 
         src="/logo.png" 
         alt="Logo"
-        className="w-[20em] sm:w-30 md:w-30 lg:w-[26em] h-auto object-cover mb-[-2em] lg:ml-[-10em] lg:mr-[5em]" 
+        className="w-[20em] sm:w-30 md:w-30 lg:w-[26em] h-auto object-cover mb-[-2em] lg:ml-[-10em] lg:mr-[5em] xs:mb-[-6em]" 
       />
       <form className="bg-white p-6 rounded-lg shadow-lg w-80">
         <h2 className="text-2xl font-bold mb-4 flex justify-center">Login</h2>

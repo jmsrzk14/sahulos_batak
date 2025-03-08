@@ -99,13 +99,10 @@ const Navbar = () => {
             <Link to="/education" className="text-amber-900 hover:text-amber-500 transition-colors py-2 border-b border-amber-100">Edukasi</Link>
             <Link to="/challenges" className="text-amber-900 hover:text-amber-500 transition-colors py-2 border-b border-amber-100">Tantangan</Link>
           </div>
-          <div className="flex justify-between pt-4">
-            <button className="text-amber-900 hover:text-amber-500 transition-colors"
+          <div className="flex justify-end pt-4">
+            <button className="text-amber-900 hover:text-amber-500 transition-colors mr-[1em]"
               onClick={() => navigate('/login')}>
               <User size={20} />
-            </button>
-            <button className="text-amber-900 hover:text-amber-500 transition-colors">
-              <Heart size={20} />
             </button>
             <button 
               className="text-amber-900 hover:text-amber-500 transition-colors relative"

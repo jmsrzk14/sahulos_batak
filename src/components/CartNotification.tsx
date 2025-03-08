@@ -19,7 +19,7 @@ const CartNotification = () => {
   if (!isCartOpen) return null;
 
   return (
-    <div className="fixed right-4 top-20 w-96 bg-white rounded-lg shadow-xl z-50">
+    <div className="fixed right-4 top-20 sm:w-[19em] w-86 bg-white rounded-lg shadow-xl z-50">
       <div className="p-4 border-b border-gray-200">
         <div className="flex justify-between items-center">
           <h3 className="text-lg font-semibold text-amber-900">Keranjang Belanja</h3>
