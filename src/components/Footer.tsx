@@ -1,7 +1,9 @@
-import React from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
+  const location = useLocation();
+
   return (
     <footer className="relative bg-amber-900 text-amber-100 z-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -16,11 +18,11 @@ const Footer = () => {
           <div className='lg:ml-[9em] xs:ml-0'>
             <h4 className="text-white font-medium mb-4">Tautan Cepat</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-white transition-colors">Beranda</a></li>
-              <li><a href="#products" className="hover:text-white transition-colors">Koleksi</a></li>
-              <li><a href="#trade" className="hover:text-white transition-colors">Tukar Pakaian</a></li>
-              <li><a href="#education" className="hover:text-white transition-colors">Edukasi</a></li>
-              <li><a href="#challenges" className="hover:text-white transition-colors">Tantangan</a></li>
+              <li><Link to="/" className="hover:text-white transition-colors">Beranda</Link></li>
+              <li><Link to="/products" className="hover:text-white transition-colors">Koleksi</Link></li>
+              <li><Link to="/trade" className="hover:text-white transition-colors">Tukar Pakaian</Link></li>
+              <li><Link to="/education" className="hover:text-white transition-colors">Edukasi</Link></li>
+              <li><Link to="/challenges" className="hover:text-white transition-colors">Tantangan</Link></li>
             </ul>
           </div>
 
