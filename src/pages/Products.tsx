@@ -3,7 +3,7 @@ import FeaturedProducts from '../components/FeaturedProducts';
 
 const Products = () => {
   useEffect(() => {
-      document.title = "WASTRA | Daftar Busana Batak";
+      document.title = "Sahulos | Daftar Busana Batak";
     }, []);
   return (
     <div className="pt-16">

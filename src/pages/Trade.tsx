@@ -3,7 +3,7 @@ import TradeSection from '../components/TradeSection';
 
 const Trade = () => {
   useEffect(() => {
-    document.title = "WASTRA | Tukar & Jual Pakaian";
+    document.title = "Sahulos | Tukar & Jual Pakaian";
   }, []);
   return (
     <div className="pt-16">

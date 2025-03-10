@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 export function Login() {
   useEffect(() => {
-      document.title = "Sahulos | Lestarikan Budaya Batak";
+      document.title = "Sahulos | Login";
   }, []);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

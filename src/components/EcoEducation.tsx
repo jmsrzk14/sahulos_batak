@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Book, Leaf, Droplet, Recycle } from 'lucide-react';
 
 const EcoEducation = () => {
+  useEffect(() => {
+        document.title = "Sahulos | Edukasi Budaya Batak";
+    }, []);
   return (
     <section id="education" className="py-16 px-4 sm:px-6 lg:px-8 bg-grey-50">
       <div className="max-w-7xl mx-auto">
